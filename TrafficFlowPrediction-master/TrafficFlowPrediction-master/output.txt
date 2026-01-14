@@ -1,0 +1,41 @@
+Input data saved to 'lstm_input_data.csv'
+135/135 ━━━━━━━━━━━━━━━━━━━━ 1s 4ms/step
+============================================================
+LSTM - Original Predictions (First 288 points):
+============================================================
+explained_variance_score:0.942020
+mape:22.231851%
+mae:7.535248
+mse:100.341498
+rmse:10.017060
+r2:0.942020
+
+============================================================
+LSTM - Shifted Predictions (After Lag Correction):
+============================================================
+explained_variance_score:0.978966
+mape:17.654522%
+mae:4.584671
+mse:36.402155
+rmse:6.033420
+r2:0.978966
+
+MAPE Improvement after lag correction: 20.59%
+
+Lag Analysis:
+Correlation between original_pred[t] and y_true[t+1]: 0.9628
+Correlation between original_pred[t] and y_true[t]: 0.9704
+✗ LAG NOT CONFIRMED: Predictions may not be lagged
+
+Results saved to 'lstm_lag_correction_results.csv'
+Comprehensive data saved to 'lstm_comprehensive_data.csv'
+
+Data Information:
+Number of predictions: 288
+Time window (lag): 12
+Input data shape: (4308, 12)
+Generated files:
+  1. lstm_input_data.csv - 包含所有用于预测的输入数据
+  2. lstm_lag_correction_results.csv - 包含预测结果对比
+  3. lstm_comprehensive_data.csv - 包含输入数据和预测结果的综合文件
+  4. lstm_lag_correction.png - 预测对比图表
